@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title >Praktikum Pemrograman Web - HTML dan HTML5</Title>
+</head>
+
+<body id="top">
+
+    <header>
+        <h1>Sistem Informasi Data Mahasiswa - Praktikum 1 - Kelas A</h1>
+        <p>Praktikum Pemrograman Web - HTML dan HTML5</p>
+
+        <img
+            src="unila.jpg"
+            alt="Foto"
+            width="200"
+            height="200">
+    </header>
+
+    <hr>
+
+    <nav>
+        <ul>
+            <li><a href="#informasi">Informasi Sistem</a></li>
+            <li><a href="#daftar-mahasiswa">Daftar Mahasiswa</a></li>
+            <li><a href="#form-tambah">Tambah Mahasiswa Baru</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+
+        <section id="informasi">
+            <h2>Informasi Sistem</h2>
+
+            <p>
+                Sistem Informasi Data MAhasiswa Baru
+            </p>
+
+            <article>
+                <h3>Deskripsi Aplikasi</h3>
+                <p>
+                    Halaman ini dibuat untuk prakttikum pemrograman web yanga da pada lab komputer Universitas Lampung.
+                </p>
+            </article>
+        </section>
+        <hr>
+
+        <section id="daftar-mahasiswa">
+            <h2>Daftar Mahasiswa Aktif</h2>
+
+            <p>
+                Berikut merupakan daftar mahasiswa aktif yang ditampilkan
+                pada Sistem informasi mahasiswa.
+            </p>
+
+            <table border="1" cellpadding="8" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Foto</th>
+                        <th>NPM</th>
+                        <th>Nama Lengkap</th>
+                        <th>Program Studi</th>
+                        <th>Angkatan</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <img
+                                src="pas foto_citra (1).jpg"
+                                alt="Foto Citra Ayu Amanda"
+                                width="80"
+                                height="80">
+                        </td>
+                        <td>2415061077</td>
+                        <td>Citra Ayu Amanda</td>
+                        <td>Teknik Informatika</td>
+                        <td>2024</td>
+                        <td>citra1103@gmail.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>
+                            <img
+                                src="pas foto_citra (1).jpg"
+                                alt="Foto"
+                                width="80"
+                                height="80">
+                        </td>
+                        <td>2415061035</td>
+                        <td>Adelia Aura Nabilla</td>
+                        <td>Teknik Informatika</td>
+                        <td>2024</td>
+                        <td>adelia@gmail.com</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>
+                            <img
+                                src="pas foto_citra (1).jpg"
+                                alt="Foto"
+                                width="80"
+                                height="80">
+                        </td>
+                        <td>2415061034</td>
+                        <td>Aisha Inda Fajrani</td>
+                        <td>Teknik Informatika</td>
+                        <td>2024</td>
+                        <td>aishainda123@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="form-tambah">
+            <h2>Tambah Mahasiswa Baru</h2>
+
+            <p>
+                Silakan mengisi formulir berikut untuk menambahkan data
+                mahasiswa baru.
+            </p>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Form Data Mahasiswa</legend>
+
+                    <p>
+                        <label for="npm">NPM:</label><br>
+                        <input
+                            type="text"
+                            id="npm"
+                            name="npm"
+                            placeholder=" Contoh: 2415061077"
+                            required
+                            pattern="[0-9]{8,12}"
+                            title="NPM harus berupa angka 8-12 digit">
+                    </p>
+
+                    <p>
+                        <label for="nama">Nama Lengkap:</label><br>
+                        <input
+                            type="text"
+                            id="nama"
+                            name="nama"
+                            placeholder="Citra Ayu Amanda"
+                            required
+                            minlength="3"
+                            maxlength="100">
+                    </p>
+
+                    <p>
+                        <label for="program_studi">Program Studi:</label><br>
+                        <select
+                            id="program_studi"
+                            name="program_studi"
+                            required>
+                            <option value="">Pilih Program Studi</option>
+                            <option value="Teknik Informatika">
+                                Teknik Informatika
+                            </option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="angkatan">Tahun Angkatan:</label><br>
+                        <input
+                            type="number"
+                            id="angkatan"
+                            name="angkatan"
+                            placeholder="2024"
+                            required
+                            min="2018"
+                            max="2026"
+                    </p>
+
+                    <p>
+                        <label for="email">Email:</label><br>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="citraamanda1103@gmail.com"
+                            required>
+                    </p>
+
+                    <button type="submit">Simpan Data Mahasiswa</button>
+                    <button type="reset">Reset Formulir</button>
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 Citra Ayu Amanda - Praktikum Pemrograman Web</p>
+
+        <p>
+            Email:
+            <a href="mailto:citra@example.com">citra@example.com</a>
+        </p>
+
+        <p>
+            <a href="#top">Kembali ke Atas</a>
+        </p>
+    </footer>
+
+</body>
+</html>
