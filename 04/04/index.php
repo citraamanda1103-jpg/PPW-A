@@ -8,7 +8,7 @@
 // memanggil file functions.php
 require_once __DIR__ . '/includes/functions.php';
 
-$page_title = 'Uji Fungsi Modular - Percobaan 1';
+$page_title = 'SIMA - Versi Produksi Kampus';
 $daftar_mahasiswa = get_all_mahasiswa();
 
 
@@ -24,7 +24,7 @@ $total_tampil = count($daftar_mahasiswa);
 // Ambil flash message dari session jika tersedia
 $flash = get_flash_message();
 
-$page_title = 'Beranda - Sistem Informasi Data Mahasiswa';
+$page_title = 'SIMA - Modul 4 PHP Server Side Dinamis';
 require_once __DIR__ . '/includes/header.php';
 ?>
 
