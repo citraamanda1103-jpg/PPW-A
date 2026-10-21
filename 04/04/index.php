@@ -15,11 +15,16 @@ $daftar_mahasiswa = get_all_mahasiswa();
 // Ambil keyword pencarian jika ada
 
 // Percobaan 4-4 Langkah 2
-$keyword = isset($_GET['search']) ? trim($_GET['search']) : '';
-$daftar_mahasiswa = get_all_mahasiswa($keywords);
 
+/* Ambil keyword pencarian jika ada */
+$page_title = 'SIMA - Modul 4 PHP Server Side Dinamis';
+
+$keyword = isset($_GET['search']) ? trim($_GET['search']) : '';
+
+$daftar_mahasiswa = get_all_mahasiswa($keyword);
 $total_semua = count_total_mahasiswa();
 $total_tampil = count($daftar_mahasiswa);
+
 
 // Ambil flash message dari session jika tersedia
 $flash = get_flash_message();
@@ -125,13 +130,7 @@ require_once __DIR__ . '/includes/header.php';
                 <?php else: ?>
 
                     <!-- Percobaan 4-2 Langkah 3 -->
-                     <td><strong><?= htmlspecialchars($mhs['npm']) ?></strong></td>
-                     <td><?= htmlspecialchars($mhs['nama']) ?></td>
-                     <td><span class="badge"><?=
-    htmlspecialchars($mhs['program_studi']) ?></span></td>
-    <td><?= htmlspecialchars($mhs['angkatan']) ?></td>
-    <td><a href="mailto:<?= htmlspecialchars($mhs['email']) ?>" class="link-email"><?= htmlspecialchars($mhs['email']) ?></a></td>
-    <td> 
+                    
                     <?php foreach ($daftar_mahasiswa as $index => $mhs): ?>
                         <tr>
                             <td><?= $index + 1 ?></td>
@@ -145,16 +144,14 @@ require_once __DIR__ . '/includes/header.php';
                             <td><a href="mailto:<?= $mhs['email'] ?>" class="link-email"><?= $mhs['email'] ?></a></td>
                             <td>
                                 <!-- Percobaan 4-2 Langkah 5 -->
-                                <a
-                                href="proses_hapus.php?id=<?=
-                                urlencode($mhs['npm']) ?>"
+                                <a href="proses_hapus.php?npm=<?= urlencode($mhs['npm']) ?>"
                                 class="btn btn btn-danger btn-sm"
                                 onclick=return confirm('Apakah Anda yakin ingin menghapus mahasiswa: <?=
                                 htmlspecialchars(addslashes($mhs['nama'])) ?> (npm: <?= 
                                 htmlspecialchars($mhs['npm']) ?>);">
                                 Hapus "
                     </a> 
-                                <a href="">Hapus</a>
+                            
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -251,3 +248,4 @@ require_once __DIR__ . '/includes/header.php';
 
 <!-- memanggil file footer.php -->
 
+<?php require_once __DIR__ . '/includes/footer.php'; ?>

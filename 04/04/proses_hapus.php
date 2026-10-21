@@ -8,7 +8,7 @@
 require_once __DIR__ . '/includes/functions.php';
 
 // Ambil parameter npm dari URL
-$npm = $_GET['npm'] ?? '';
+$npm = trim($_GET['npm'] ?? '');
 
 if (!empty($npm)) {
     $hasil = hapus_mahasiswa($npm);
